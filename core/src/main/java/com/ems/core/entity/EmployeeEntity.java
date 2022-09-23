@@ -11,7 +11,7 @@ import java.time.LocalDate;
 @Entity
 @Table(name = "employee")
 @Data
-public class Employee implements Serializable {
+public class EmployeeEntity implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -24,7 +24,7 @@ public class Employee implements Serializable {
     @Column(name = "emp_email_id",nullable = false,insertable = true,updatable = true,unique = true)
     private String empEmailId;
 
-    @Column(name = "emp_phone_no",,nullable = false,insertable = true,updatable = true,unique = true)
+    @Column(name = "emp_phone_no",nullable = false,insertable = true,updatable = true,unique = true)
     private String empPhoneNo;
 
     @Column(name = "emp_dob",nullable = false,updatable = true)
