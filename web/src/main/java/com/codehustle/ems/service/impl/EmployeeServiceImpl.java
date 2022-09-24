@@ -1,12 +1,12 @@
-package com.ems.web.service.impl;
+package com.codehustle.ems.service.impl;
 
-import com.ems.commons.constants.MessageConstants;
-import com.ems.commons.exceptions.ConflictException;
-import com.ems.commons.exceptions.ServiceException;
-import com.ems.core.entity.EmployeeEntity;
-import com.ems.core.model.Employee;
-import com.ems.core.repository.EmployeeRepository;
-import com.ems.web.service.EmployeeService;
+import com.codehustle.ems.service.EmployeeService;
+import com.codehustle.ems.constants.MessageConstants;
+import com.codehustle.ems.exceptions.ConflictException;
+import com.codehustle.ems.exceptions.ServiceException;
+import com.codehustle.ems.entity.EmployeeEntity;
+import com.codehustle.ems.model.Employee;
+import com.codehustle.ems.repository.EmployeeRepository;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

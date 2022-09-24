@@ -1,4 +1,4 @@
-package com.ems.commons.exceptions;
+package com.codehustle.ems.exceptions;
 
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;

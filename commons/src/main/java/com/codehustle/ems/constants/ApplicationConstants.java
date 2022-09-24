@@ -1,4 +1,4 @@
-package com.ems.commons.constants;
+package com.codehustle.ems.constants;
 
 public class ApplicationConstants {
 

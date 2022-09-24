@@ -1,4 +1,4 @@
-package com.ems.core.model;
+package com.codehustle.ems.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -18,4 +18,5 @@ public class Employee implements Serializable {
     private String empPhoneNo;
     private LocalDate empDob;
     private LocalDate empJoinDate;
+    private String empType;
 }

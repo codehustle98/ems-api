@@ -19,5 +19,5 @@ spring:
     change-log: classpath:db/master.xml
 server:
   servlet:
-    context-path: /ems/api/
+    context-path: /ems/api
   port: 8080

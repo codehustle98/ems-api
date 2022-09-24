@@ -1,8 +1,8 @@
-package com.ems.web.controller;
+package com.codehustle.ems.controller;
 
-import com.ems.commons.exceptions.ServiceException;
-import com.ems.core.model.Employee;
-import com.ems.web.service.EmployeeService;
+import com.codehustle.ems.exceptions.ServiceException;
+import com.codehustle.ems.model.Employee;
+import com.codehustle.ems.service.EmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;

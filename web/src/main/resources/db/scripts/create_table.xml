@@ -44,4 +44,27 @@
         </createTable>
     </changeSet>
 
+    <changeSet id="1.0.2" author="Prabhu">
+        <comment>add column employee type</comment>
+        <addColumn tableName="employee">
+            <column name="emp_type" type="varchar(2)">
+                <constraints nullable="false"/>
+            </column>
+        </addColumn>
+    </changeSet>
+
+    <changeSet id="1.0.3" author="Prabhu">
+        <comment>Add department foreign key</comment>
+        <addColumn tableName="employee">
+            <column name="dept_id" type="int">
+                <constraints nullable="false"/>
+            </column>
+        </addColumn>
+        <addForeignKeyConstraint baseTableName="employee"
+                                 baseColumnNames="dept_id"
+                                 constraintName="fk_emp_dept"
+                                 referencedTableName="department"
+                                 referencedColumnNames="dept_id"/>
+    </changeSet>
+
 </databaseChangeLog>

@@ -1,4 +1,4 @@
-package com.ems.commons.exceptions;
+package com.codehustle.ems.exceptions;
 
 public class ConflictException extends Exception{
 
