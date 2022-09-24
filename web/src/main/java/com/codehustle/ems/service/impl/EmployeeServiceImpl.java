@@ -1,5 +1,6 @@
 package com.codehustle.ems.service.impl;
 
+import com.codehustle.ems.exceptions.NotFoundException;
 import com.codehustle.ems.service.EmployeeService;
 import com.codehustle.ems.constants.MessageConstants;
 import com.codehustle.ems.exceptions.ConflictException;
@@ -32,6 +33,25 @@ public class EmployeeServiceImpl implements EmployeeService {
             }
         }catch (Exception e){
             throw new ServiceException(e.getMessage());
+        }
+    }
+
+    public void deleteEmployee(Employee employee) throws ServiceException
+    {
+        try
+        {
+            EmployeeEntity employeeEntity = modelMapper.map(employee,EmployeeEntity.class);
+            if (employeeEntity != null) {
+                EmployeeEntity existingUser = employeeRepository.findByEmpId(employeeEntity.getEmpId());
+                if(existingUser != null)
+                {
+                    throw new NotFoundException(MessageConstants.DELETE_USER);
+                    employeeRepository.delete(employeeEntity);
+                }
+
+            }
+        } catch (NotFoundException e) {
+            e.printStackTrace();
         }
     }
 }

@@ -6,4 +6,5 @@ import com.codehustle.ems.model.Employee;
 public interface EmployeeService {
 
     public void addEmployee(Employee employee) throws ServiceException;
+    public void deleteEmployee(Long employee) throws ServiceException;
 }
