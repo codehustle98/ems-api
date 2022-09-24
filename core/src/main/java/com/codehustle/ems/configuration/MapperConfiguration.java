@@ -1,4 +1,4 @@
-package com.ems.core.configuration;
+package com.codehustle.ems.configuration;
 
 import org.modelmapper.ModelMapper;
 import org.springframework.context.annotation.Bean;

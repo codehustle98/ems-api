@@ -1,7 +1,6 @@
-package com.ems.core.repository;
+package com.codehustle.ems.repository;
 
-import com.ems.core.entity.EmployeeEntity;
-import com.ems.core.model.Employee;
+import com.codehustle.ems.entity.EmployeeEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
