@@ -19,6 +19,7 @@ import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 
 import java.time.LocalDate;
 
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
@@ -47,5 +48,12 @@ public class EmployeeControllerTest {
                 .content(objectMapper.writeValueAsString(employee))
                 .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isCreated());
+    }
+
+    @Test
+    public void getEmployees_ShouldReturn200() throws Exception {
+        mockMvc.perform(get("/employee")
+        .contentType(MediaType.APPLICATION_JSON))
+        .andExpect(status().isOk());
     }
 }
