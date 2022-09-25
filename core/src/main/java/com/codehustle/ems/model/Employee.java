@@ -19,4 +19,5 @@ public class Employee implements Serializable {
     private LocalDate empDob;
     private LocalDate empJoinDate;
     private String empType;
+    private Department department;
 }
