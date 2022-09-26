@@ -5,7 +5,10 @@ import com.codehustle.ems.model.Employee;
 import com.codehustle.ems.service.EmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequestMapping(value = "/employee")
@@ -20,9 +23,20 @@ public class EmployeeController {
         employeeService.addEmployee(employee);
     }
 
+
     @DeleteMapping("/delete/{empid}")
-    public void deleteEmployee(@PathVariable Long empid) throws ServiceException
-    {
-          employeeService.deleteEmployee(empid);
+    public void deleteEmployee(@PathVariable Long empid) throws ServiceException {
+        employeeService.deleteEmployee(empid);
+    }
+    @GetMapping
+    public ResponseEntity<List<Employee>> getEmployees(){
+        return ResponseEntity.ok(employeeService.getAllEmployees());
+    }
+
+    @PutMapping
+    @ResponseStatus(HttpStatus.OK)
+    public void updateEmployee(@RequestBody Employee employee) throws ServiceException {
+        employeeService.updateEmployee(employee);
+
     }
 }

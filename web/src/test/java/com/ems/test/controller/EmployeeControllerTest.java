@@ -1,6 +1,7 @@
 package com.ems.test.controller;
 
 import com.codehustle.ems.enums.EmployeeType;
+import com.codehustle.ems.model.Department;
 import com.codehustle.ems.model.Employee;
 import com.codehustle.ems.controller.EmployeeController;
 import com.codehustle.ems.service.EmployeeService;
@@ -19,6 +20,7 @@ import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 
 import java.time.LocalDate;
 
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
@@ -42,10 +44,17 @@ public class EmployeeControllerTest {
 
     @Test
     public void addEmployee_ShouldReturn204() throws Exception {
-        Employee employee = new Employee(1L,"Juan","juan@mail.com","90172783",LocalDate.parse("2012-01-01"), LocalDate.parse("2021-10-08"), EmployeeType.ADMIN.getEmpType());
+        Employee employee = new Employee(1L,"Juan","juan@mail.com","90172783",LocalDate.parse("2012-01-01"), LocalDate.parse("2021-10-08"), EmployeeType.ADMIN.getEmpType(),new Department());
         mockMvc.perform(post("/employee/")
                 .content(objectMapper.writeValueAsString(employee))
                 .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isCreated());
+    }
+
+    @Test
+    public void getEmployees_ShouldReturn200() throws Exception {
+        mockMvc.perform(get("/employee")
+        .contentType(MediaType.APPLICATION_JSON))
+        .andExpect(status().isOk());
     }
 }

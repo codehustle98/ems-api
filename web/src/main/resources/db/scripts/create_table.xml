@@ -53,18 +53,25 @@
         </addColumn>
     </changeSet>
 
-    <changeSet id="1.0.3" author="Prabhu">
+    <changeSet id="1.0.4" author="Prabhu">
         <comment>Add department foreign key</comment>
         <addColumn tableName="employee">
-            <column name="dept_id" type="int">
-                <constraints nullable="false"/>
-            </column>
+            <column name="dept_id" type="int"/>
         </addColumn>
         <addForeignKeyConstraint baseTableName="employee"
                                  baseColumnNames="dept_id"
                                  constraintName="fk_emp_dept"
                                  referencedTableName="department"
                                  referencedColumnNames="dept_id"/>
+    </changeSet>
+
+    <changeSet id="1.0.5" author="Prabhu">
+        <comment>add column dept code</comment>
+        <addColumn tableName="department">
+            <column name="dept_code" type="varchar(10)">
+                <constraints nullable="false" unique="true"/>
+            </column>
+        </addColumn>
     </changeSet>
 
 </databaseChangeLog>
