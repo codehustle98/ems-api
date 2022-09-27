@@ -43,7 +43,7 @@ public class EmployeeEntity implements Serializable {
     private String empType;
 
     @ManyToOne
-    @JoinColumn(name = "dept_id",referencedColumnName = "dept_id")
+    @JoinColumn(name = "dept_id")
     @OnDelete(action = OnDeleteAction.CASCADE)
     private DepartmentEntity department;
 }
