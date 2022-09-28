@@ -23,6 +23,11 @@ public class EmployeeController {
         employeeService.addEmployee(employee);
     }
 
+
+    @DeleteMapping("/delete/{empid}")
+    public void deleteEmployee(@PathVariable Long empid) throws ServiceException {
+        employeeService.deleteEmployee(empid);
+    }
     @GetMapping
     public ResponseEntity<List<Employee>> getEmployees(){
         return ResponseEntity.ok(employeeService.getAllEmployees());
@@ -32,5 +37,6 @@ public class EmployeeController {
     @ResponseStatus(HttpStatus.OK)
     public void updateEmployee(@RequestBody Employee employee) throws ServiceException {
         employeeService.updateEmployee(employee);
+
     }
 }
