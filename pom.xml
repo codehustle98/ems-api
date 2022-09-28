@@ -113,6 +113,7 @@
                 <version>2.22.2</version>
             </plugin>
         </plugins>
+        <finalName>ems-api</finalName>
     </build>
 
 </project>
