@@ -2,11 +2,7 @@ package com.codehustle.ems.entity;
 
 import com.codehustle.ems.constants.ApplicationConstants;
 import com.fasterxml.jackson.annotation.JsonFormat;
-import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.NoArgsConstructor;
-import org.hibernate.annotations.OnDelete;
-import org.hibernate.annotations.OnDeleteAction;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -44,6 +40,5 @@ public class EmployeeEntity implements Serializable {
 
     @ManyToOne
     @JoinColumn(name = "dept_id")
-    @OnDelete(action = OnDeleteAction.CASCADE)
     private DepartmentEntity department;
 }
