@@ -5,6 +5,7 @@ import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.List;
 
 @Entity
 @Table(name = "department")
@@ -22,4 +23,7 @@ public class DepartmentEntity implements Serializable {
 
     @Column(name = "dept_name",nullable = false,updatable = true,insertable = true,length = 50)
     private String deptName;
+
+    @OneToMany(cascade = CascadeType.REMOVE,mappedBy = "department")
+    private List<EmployeeEntity> employees;
 }
