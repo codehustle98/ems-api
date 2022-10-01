@@ -1,5 +1,7 @@
 package com.codehustle.ems.model;
 
+import com.codehustle.ems.annotations.ValidEmail;
+import com.codehustle.ems.constants.MessageConstants;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -14,6 +16,7 @@ public class Employee implements Serializable {
 
     private Long empId;
     private String empName;
+    @ValidEmail
     private String empEmailId;
     private String empPhoneNo;
     private LocalDate empDob;
