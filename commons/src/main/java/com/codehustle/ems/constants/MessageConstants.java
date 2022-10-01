@@ -13,4 +13,6 @@ public class MessageConstants {
 
     public static final String DEPT_NOT_FOUND = "Department is not found";
 
+    public static final String INVALID_EMAIL = "Invalid Email";
+
 }
