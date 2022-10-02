@@ -2,7 +2,8 @@ package com.codehustle.ems.enums;
 
 public enum EmployeeType {
     ADMIN("A"),
-    EMPLOYEE("E");
+    HR("HR"),
+    ENGINEER("E");
 
     private final String empType;
 

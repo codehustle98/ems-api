@@ -39,6 +39,18 @@ public class EmployeeServiceImpl implements EmployeeService {
     }
 
     @Override
+    public void deleteEmployee(Long empid) throws ServiceException {
+        try {
+            EmployeeEntity existingUser = employeeRepository.findByEmpId(empid);
+           if(existingUser==null)
+               throw new NotFoundException(MessageConstants.USER_NOT_FOUND);
+           employeeRepository.deleteById(empid);
+        } catch (NotFoundException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Override
     public List<Employee> getAllEmployees() {
         return mapperService.map(employeeRepository.findAll(),Employee.class);
     }
@@ -53,6 +65,7 @@ public class EmployeeServiceImpl implements EmployeeService {
             employeeRepository.save(updatedEmployeeDetails);
         }catch (Exception e){
             throw new ServiceException(e.getMessage());
+
         }
     }
 }

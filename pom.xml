@@ -25,6 +25,7 @@
         <module>web</module>
         <module>core</module>
         <module>commons</module>
+        <module>notification</module>
     </modules>
 
     <packaging>pom</packaging>
@@ -73,6 +74,16 @@
                 <artifactId>commons</artifactId>
                 <version>${app.version}</version>
             </dependency>
+            <dependency>
+                <groupId>com.codehustle</groupId>
+                <artifactId>notification</artifactId>
+                <version>${app.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-mail</artifactId>
+                <version>${spring.version}</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 
@@ -113,6 +124,7 @@
                 <version>2.22.2</version>
             </plugin>
         </plugins>
+        <finalName>ems-api</finalName>
     </build>
 
 </project>
