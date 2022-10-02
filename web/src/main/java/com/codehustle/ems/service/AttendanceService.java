@@ -1,8 +1,10 @@
 package com.codehustle.ems.service;
 
-import com.codehustle.ems.model.Attendance;
+import com.codehustle.ems.exceptions.ServiceException;
 
 public interface AttendanceService {
 
-    void addAttendance(Attendance attendance);
+    void addAttendance(Long empId);
+
+    void addCheckoutAttendance(Long attendanceId) throws ServiceException;
 }
