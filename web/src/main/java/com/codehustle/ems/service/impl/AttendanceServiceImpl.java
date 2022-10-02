@@ -44,4 +44,31 @@ public class AttendanceServiceImpl implements AttendanceService {
             throw new ServiceException(e);
         }
     }
+
+    @Override
+    public void regularizeAttendance(LocalDateTime checkinTime, LocalDateTime checkOutTime, Long attandanceId, Long empId, LocalDate attendanceDate) throws ServiceException {
+        try{
+            if(attandanceId!=null)
+            {
+                AttendanceEntity attendanceEntity= attendanceRepository.findById(attandanceId).orElseThrow(NotFoundException::new);
+                attendanceEntity.setCheckinTime(checkinTime);
+                attendanceEntity.setCheckoutTime(checkOutTime);
+                attendanceRepository.save(attendanceEntity);
+            }
+            else
+            {
+                EmployeeEntity employeeEntity= new EmployeeEntity();
+                employeeEntity.setEmpId(empId);
+                AttendanceEntity attendanceEntity= new AttendanceEntity();
+                attendanceEntity.setCheckinTime(checkinTime);
+                attendanceEntity.setCheckoutTime(checkOutTime);
+                attendanceEntity.setAttendanceDate(attendanceDate);
+                attendanceEntity.setEmployee(employeeEntity);
+                attendanceRepository.save(attendanceEntity);
+            }
+        }
+        catch (Exception e){
+                throw new ServiceException(e);
+        }
+    }
 }
