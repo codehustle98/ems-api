@@ -1,9 +1,7 @@
 package com.codehustle.ems.controller;
 
 import com.codehustle.ems.exceptions.ServiceException;
-import com.codehustle.ems.model.Attendance;
 import com.codehustle.ems.service.AttendanceService;
-import jdk.vm.ci.meta.Local;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
