@@ -28,3 +28,6 @@ server:
   servlet:
     context-path: /ems/api
   port: 8080
+ems:
+  cron:
+    email-scheduler: 1 * * * * ?
