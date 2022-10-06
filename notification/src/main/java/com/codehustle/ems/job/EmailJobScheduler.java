@@ -9,8 +9,6 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.util.CollectionUtils;
 
-import javax.mail.MessagingException;
-import java.io.IOException;
 import java.time.LocalDate;
 import java.util.List;
 
@@ -33,13 +31,7 @@ public class EmailJobScheduler {
         if(!CollectionUtils.isEmpty(emailIds)){
             emailIds.forEach(id-> {
                 log.info("Sending email to : "+id);
-                try {
-                    emailService.sendEmailWithAttachment(id,BIRTHDAY_SUBJECT,"Happy Birthday !!");
-                } catch (MessagingException e) {
-                    e.printStackTrace();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
+                emailService.sendBirthdayEmail(id,BIRTHDAY_SUBJECT);
             });
         }
     }
