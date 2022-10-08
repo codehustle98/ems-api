@@ -33,6 +33,8 @@ public class EmailJobScheduler {
                 log.info("Sending email to : "+id);
                 emailService.sendBirthdayEmail(id,BIRTHDAY_SUBJECT);
             });
+        }else{
+            log.info("No emails found to send email");
         }
     }
 
