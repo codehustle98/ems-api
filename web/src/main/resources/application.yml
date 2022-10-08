@@ -15,6 +15,10 @@ spring:
     jpa:
       repositories:
         enabled: true
+    mongodb:
+      database: ems
+      host: localhost
+      port: 27017
   mail:
     host: smtp.gmail.com
     port: 587
