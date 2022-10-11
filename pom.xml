@@ -19,6 +19,7 @@
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
         <app.version>1.0.0-SNAPSHOT</app.version>
+        <start-class>com.codehustle.ems.EmsApplication</start-class>
     </properties>
 
     <modules>
@@ -26,12 +27,33 @@
         <module>core</module>
         <module>commons</module>
         <module>notification</module>
+        <module>distribution</module>
     </modules>
 
     <packaging>pom</packaging>
 
     <dependencyManagement>
         <dependencies>
+            <dependency>
+                <groupId>com.codehustle</groupId>
+                <artifactId>core</artifactId>
+                <version>${app.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.codehustle</groupId>
+                <artifactId>web</artifactId>
+                <version>${app.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.codehustle</groupId>
+                <artifactId>commons</artifactId>
+                <version>${app.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.codehustle</groupId>
+                <artifactId>notification</artifactId>
+                <version>${app.version}</version>
+            </dependency>
             <dependency>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-starter-web</artifactId>
@@ -58,26 +80,6 @@
                 <groupId>org.modelmapper</groupId>
                 <artifactId>modelmapper</artifactId>
                 <version>2.3.0</version>
-            </dependency>
-            <dependency>
-                <groupId>com.codehustle</groupId>
-                <artifactId>core</artifactId>
-                <version>${app.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.codehustle</groupId>
-                <artifactId>web</artifactId>
-                <version>${app.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.codehustle</groupId>
-                <artifactId>commons</artifactId>
-                <version>${app.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.codehustle</groupId>
-                <artifactId>notification</artifactId>
-                <version>${app.version}</version>
             </dependency>
             <dependency>
                 <groupId>org.springframework.boot</groupId>
@@ -127,15 +129,5 @@
             <scope>test</scope>
         </dependency>
     </dependencies>
-
-    <build>
-        <plugins>
-            <plugin>
-                <artifactId>maven-surefire-plugin</artifactId>
-                <version>2.22.2</version>
-            </plugin>
-        </plugins>
-        <finalName>ems-api</finalName>
-    </build>
 
 </project>
