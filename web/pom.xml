@@ -9,8 +9,6 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <packaging>jar</packaging>
-
     <artifactId>web</artifactId>
 
     <dependencies>
@@ -32,4 +30,5 @@
             <artifactId>notification</artifactId>
         </dependency>
     </dependencies>
+
 </project>
