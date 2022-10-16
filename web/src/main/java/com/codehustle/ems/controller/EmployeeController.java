@@ -40,6 +40,5 @@ public class EmployeeController {
     @ResponseStatus(HttpStatus.OK)
     public void updateEmployee(@RequestBody Employee employee) throws ServiceException {
         employeeService.updateEmployee(employee);
-
     }
 }

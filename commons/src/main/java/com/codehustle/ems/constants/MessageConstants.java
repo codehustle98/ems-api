@@ -15,4 +15,8 @@ public class MessageConstants {
 
     public static final String INVALID_EMAIL = "Invalid Email";
 
+    public static final String INVALID_CREDENTIALS = "User email id or password is invalid";
+
+    public static final String INVALID_PASSWORD = "Invalid password";
+
 }
