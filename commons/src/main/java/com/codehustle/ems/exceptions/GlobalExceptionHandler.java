@@ -18,7 +18,10 @@ public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
             return new ResponseEntity<Object>(e.getMessage(),new HttpHeaders(), HttpStatus.BAD_REQUEST);
         } else if(e.getMessage().contains("not found")){
             return new ResponseEntity<Object>(e.getMessage(),new HttpHeaders(), HttpStatus.NOT_FOUND);
-        } else{
+        }else if(e.getMessage().contains("invalid")){
+            return new ResponseEntity<Object>(e.getMessage(),new HttpHeaders(),HttpStatus.UNAUTHORIZED);
+        }
+        else{
             return new ResponseEntity<Object>(e.getMessage(),new HttpHeaders(),HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }

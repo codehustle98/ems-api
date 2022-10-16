@@ -24,6 +24,6 @@ public class DepartmentEntity implements Serializable {
     @Column(name = "dept_name",nullable = false,updatable = true,insertable = true,length = 50)
     private String deptName;
 
-    @OneToMany(cascade = CascadeType.REMOVE,mappedBy = "department")
+    @OneToMany(cascade = CascadeType.ALL,mappedBy = "department")
     private List<EmployeeEntity> employees;
 }
