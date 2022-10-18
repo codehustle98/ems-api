@@ -17,4 +17,6 @@ public interface EmployeeRepository extends JpaRepository<EmployeeEntity,Long> {
 
     @Query("select emp.empEmailId from EmployeeEntity emp where emp.empDob =:date ")
     List<String> getEmployeeEmailIdsByBirthDate(LocalDate date);
+
+    EmployeeEntity findByEmpEmailId(String emailId);
 }
