@@ -1,7 +1,7 @@
 package com.codehustle.ems.model;
 
 import com.codehustle.ems.annotations.ValidEmail;
-import com.codehustle.ems.constants.MessageConstants;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -22,5 +22,7 @@ public class Employee implements Serializable {
     private LocalDate empDob;
     private LocalDate empJoinDate;
     private String empType;
+    @JsonIgnore
+    private String loginPassword;
     private Department department;
 }

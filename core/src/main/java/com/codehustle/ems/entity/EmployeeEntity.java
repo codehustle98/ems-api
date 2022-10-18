@@ -27,18 +27,21 @@ public class EmployeeEntity implements Serializable {
     @Column(name = "emp_phone_no",nullable = false,insertable = true,updatable = true,unique = true)
     private String empPhoneNo;
 
-    @Column(name = "emp_dob",nullable = false,updatable = true)
+    @Column(name = "emp_dob",nullable = true,updatable = true)
     @JsonFormat(shape = JsonFormat.Shape.STRING,pattern = ApplicationConstants.DATE_FORMAT)
     private LocalDate empDob;
 
-    @Column(name = "emp_join_date",nullable = false,updatable = true)
+    @Column(name = "emp_join_date",nullable = true,updatable = true)
     @JsonFormat(shape = JsonFormat.Shape.STRING,pattern = ApplicationConstants.DATE_FORMAT)
     private LocalDate empJoinDate;
 
     @Column(name = "emp_type",length = 2)
     private String empType;
 
+    @Column(name = "login_password")
+    private String loginPassword;
+
     @ManyToOne
-    @JoinColumn(name = "dept_id")
+    @JoinColumn(name = "dept_id",nullable = true)
     private DepartmentEntity department;
 }

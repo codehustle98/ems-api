@@ -2,6 +2,7 @@ package com.codehustle.ems.controller;
 
 import com.codehustle.ems.exceptions.ServiceException;
 import com.codehustle.ems.model.Employee;
+import com.codehustle.ems.model.User;
 import com.codehustle.ems.service.EmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -40,5 +41,15 @@ public class EmployeeController {
     @ResponseStatus(HttpStatus.OK)
     public void updateEmployee(@RequestBody Employee employee) throws ServiceException {
         employeeService.updateEmployee(employee);
+    }
+
+    @PostMapping(value = "/signup")
+    public ResponseEntity<Employee> signUpUser(@RequestBody Employee employee) throws ServiceException {
+        return ResponseEntity.ok().body(employeeService.signUpUser(employee));
+    }
+
+    @GetMapping(value = "/login")
+    public ResponseEntity<Employee> loginUser(@RequestBody User user) throws ServiceException {
+        return ResponseEntity.ok().body(employeeService.loginUser(user));
     }
 }
