@@ -19,4 +19,7 @@ public interface EmployeeRepository extends JpaRepository<EmployeeEntity,Long> {
     List<String> getEmployeeEmailIdsByBirthDate(LocalDate date);
 
     EmployeeEntity findByEmpEmailId(String emailId);
+
+    @Query("select emp.empName from EmployeeEntity emp where emp.empDob =:date")
+    List<String> findBirthdayEmployees(LocalDate date);
 }
